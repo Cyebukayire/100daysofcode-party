@@ -1,13 +1,277 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: rgb(105, 156, 231);
+}
+
+nav {
+  height: 70px;
+  display: flex;
+  /* background-color: rgb(228, 53, 53); */
+  padding: 20px 36px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  color: rgb(73, 186, 252);
+  max-width: 100%;
+  padding: 20px 40px 0px 5px;
+  padding-left: 40px;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
+
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height:100vmin;
+  padding: 10px;
+  background-color: rgb(105, 156, 231);
+  margin-bottom: 100px;
+  padding-top: 100px;
+}
+
+.balloon {
+  padding-top: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.balloon > div:before {
+  position: absolute;
+  bottom: -15px;
+  left: 52px;
+  content: "▲";
+  font-size: 1.3em;
+  color: white;
+}
+
+span {
+  font-size: 4.8em;
+  color: white;
+  position: relative;
+}
+
+.balloon > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 140px;
+  border-radius: 0;
+  border-radius: 80% 80% 80% 80%;
+  margin: 0 auto;
+  position: absolute;
+  padding: 10px;
+  box-shadow: inset 17px 7px 10px rgba(182, 15, 97, 0.9);
+  transform-origin: bottom center;
+  left: -600px;
+}
+
+.balloon > div:nth-child(1) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(20, 203, 235),
+    rgb(109, 206, 230)
+  );
+  left: 0px;
+  top: 40px;
+  box-shadow: inset 10px 10px 10px rgba(34, 233, 157, 0.9);
+  animation: balloon1 6s ease-in-out infinite;
+}
+
+.balloon > div:nth-child(1):before {
+  color: rgb(21, 203, 248);
+}
+
+@keyframes balloon1 {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(8deg);
+  }
+}
+
+.balloon > div:nth-child(2) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(104, 238, 43),
+    rgb(180, 247, 58)
+  );
+  left: 240px;
+  top: 150px;
+  box-shadow: inset 10px 10px 10px rgba(27, 216, 144, 0.9);
+  animation: balloon2 6s ease-in-out infinite;
+}
+
+.balloon > div:nth-child(2):before {
+  color: rgb(148, 243, 23);
+}
+
+@keyframes balloon2 {
+  0%,
+  100% {
+    -webkit-transform: translateY(0) rotate(6deg);
+  }
+  50% {
+    -webkit-transform: translateY(-30px) rotate(-8deg);
+  }
+}
+
+.balloon > div:nth-child(3) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(33, 124, 243),
+    rgb(9, 240, 220)
+  );
+  left: 480px;
+  box-shadow: inset 10px 10px 10px rgba(25, 75, 238, 0.9);
+  -webkit-animation: balloon3 6s ease-in-out infinite;
+  -moz-animation: balloon3 6s ease-in-out infinite;
+  -o-animation: balloon3 6s ease-in-out infinite;
+  animation: balloon3 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(3):before {
+  color: rgb(2, 173, 252);
+}
+
+@keyframes balloon3 {
+  0%,
+  100% {
+    transform: translate(0, -10px) rotate(6deg);
+  }
+  50% {
+    transform: translate(-20px, 30px) rotate(-8deg);
+  }
+}
+
+.balloon > div:nth-child(4) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(198, 243, 114),
+    rgb(75, 233, 12)
+  );
+  left: -600px;
+  top: 40px;
+  box-shadow: inset 10px 10px 10px rgba(34, 233, 157, 0.9);
+  animation: balloon1 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(4):before {
+  color: rgb(94, 252, 2);
+}
+
+.balloon > div:nth-child(5) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(192, 212, 13),
+    rgb(218, 241, 4)
+  );
+  left: -400px;
+  top: 200px;
+  box-shadow: inset 10px 10px 10px rgba(34, 233, 157, 0.9);
+  animation: balloon2 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(5):before {
+  color: rgb(187, 252, 36);
+}
+
+.balloon > div:nth-child(6) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(210, 20, 235),
+    rgb(213, 172, 240)
+  );
+  left: -600px;
+  top: 400px;
+  box-shadow: inset 10px 10px 10px rgba(234, 206, 247, 0.9);
+  animation: balloon3 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(6):before {
+  color: rgb(250, 111, 243);
+}
+.balloon > div:nth-child(7) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(235, 20, 199),
+    rgb(241, 131, 236)
+  );
+  left: -100px;
+  top: 300px;
+  box-shadow: inset 10px 10px 10px rgba(180, 50, 231, 0.9);
+  animation: balloon1 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(7):before {
+  color: rgb(245, 89, 219);
+}
+
+.balloon > div:nth-child(8) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(52, 158, 245),
+    rgb(78, 123, 247)
+  );
+  left: 50px;
+  top: 550px;
+  box-shadow: inset 10px 10px 10px rgba(114, 195, 233, 0.9);
+  animation: balloon2 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(8):before {
+  color: rgb(2, 110, 252);
+}
+
+.balloon > div:nth-child(9) {
+  background: radial-gradient(
+    circle at 100px 100px,
+    rgb(5, 183, 214),
+    rgb(109, 206, 230)
+  );
+  left: 500px;
+  top: 450px;
+  box-shadow: inset 10px 10px 10px rgba(34, 233, 223, 0.9);
+  animation: balloon3 6s ease-in-out infinite;
+}
+.balloon > div:nth-child(9):before {
+  color: rgb(35, 202, 224);
+}
+
+
+.balloon .explode {
+  background: rgb(218, 18, 208);
+  animation: explode 6s ease-in-out infinite;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1.5) scaleX(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
